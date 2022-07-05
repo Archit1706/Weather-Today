@@ -53,6 +53,10 @@ form input:focus {
     background-color: rgba(20, 20, 20, 0.9);
 }
 
+input[type="text"] {
+    text-align:center;
+}
+
 form button {
     text-decoration: none;
     border: none;
