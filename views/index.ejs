@@ -1,0 +1,26 @@
+<%- include("partials/header") -%>
+    <div class="container">
+        <form action="/" method="post">
+
+            <input type="text" name="city" placeholder="Search for a city" id="city-search" class="search-box" autocomplete="off" autocapitalize="on">
+            <button type="submit">Search</button>
+            
+        </form>
+        <div class="weather-info">
+            <div class="location">
+                <div class="city"><%= location %></div>
+                <div class="date"><%= date %></div>
+            </div>
+            
+            <div class="current">
+                <div class="temp"><%= temp %><span>°C</span></div>
+                <div class="description"><%= description %></div>
+                <div class="hi-low"><%= tempMinMax %></div>
+            </div>
+        </div>
+        
+        
+    </div>
+
+<%- include("partials/footer") -%>
+
