@@ -1,0 +1,17 @@
+{
+  "name": "p3-weather",
+  "version": "1.0.0",
+  "description": "Weather Informaton",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Archit Rathod",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}

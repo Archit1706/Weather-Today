@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Lobster&family=Ubuntu&display=swap");
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Ubuntu", "Outfit", sans-serif;
+    background-image: url("https://images3.alphacoders.com/109/1091500.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.6)
+    );
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem 1rem;
+}
+
+form input {
+    width: 50%;
+    max-width: 60%;
+    padding: 1rem 1.5rem;
+    border: none;
+    outline: none;
+    background-color: rgba(20, 20, 20, 0.4);
+    border-radius: 20px;
+    border-bottom: 0.25rem solid rgb(232, 162, 22);
+    font-size: 1.25rem;
+    font-weight: 300;
+    /* transition: 0.2s ease-out; */
+    color: #eee;
+}
+
+form input:focus {
+    background-color: rgba(20, 20, 20, 0.9);
+}
+
+input[type="text"] {
+    text-align:center;
+}
+
+form button {
+    text-decoration: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 20%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    margin-left: 20px;
+    background-image: linear-gradient(to bottom right, #810955, #fbb454);
+}
+
+form button:hover {
+    transition: 0.8s ease-out;
+    background-image: linear-gradient(to bottom right, #fbb454, #810955);
+    color: white;
+    /* font-size: 1.75rem; */
+}
+.weather-info {
+    /* flex: 1 1 100%; */
+    padding: 23px 25px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.location .city {
+    color: #eee;
+    font-size: 2.3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.location .date {
+    color: #eee;
+    font-size: 1.3rem;
+}
+
+.current {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.current .temp {
+    color: #eee;
+    font-size: 4rem;
+    font-weight: 900;
+    margin: 30px 0;
+    text-shadow: 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+.current .description {
+    color: #eee;
+    font-size: 3rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 1rem;
+    text-shadow: 0 3px rgba(0, 0, 0, 0.4);
+}
+
+.current .temp span {
+    font-weight: 200;
+}
+
+.current .hi-low {
+    color: #eee;
+    font-size: 2rem;
+    font-weight: 500;
+    text-shadow: 0 3px rgba(0, 0, 0, 0.4);
+}
+
+footer {
+    /* background: -webkit-linear-gradient(bottom, #7D1E6A, orange); */
+    width: 100vw;
+    bottom: 0;
+    position: fixed;
+    background-color: lightgrey;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+}
+
+.footer {
+    font-size: 1.5rem;
+    background: -webkit-linear-gradient(right, blue, purple, orange, green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer:hover {
+    /* transition: 0.8s ease-in; */
+    background: -webkit-linear-gradient(left, blue, purple, orange, green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
