@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Lobster&family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Lobster&family=Ubuntu:wght@300;400;500;700&display=swap");
 
 *,
 *::after,
@@ -8,45 +8,59 @@
     padding: 0;
 }
 
+html,
+body {
+    min-height: 100%;
+}
+
 body {
     font-family: "Ubuntu", "Outfit", sans-serif;
-    background-image: url("https://images3.alphacoders.com/109/1091500.jpg");
+    background-image: url("/images/bgImage-1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-bottom: 4rem;
     background-image: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0.6)
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.65)
     );
 }
 
 form {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    gap: 0.75rem;
     padding: 2rem 1rem 1rem;
+    flex-wrap: wrap;
 }
 
 form input {
     width: 50%;
     max-width: 60%;
+    min-width: 240px;
     padding: 1rem 1.5rem;
     border: none;
     outline: none;
-    background-color: rgba(20, 20, 20, 0.4);
+    background-color: rgba(20, 20, 20, 0.45);
     border-radius: 20px;
     border-bottom: 0.25rem solid rgb(232, 162, 22);
     font-size: 1.25rem;
     font-weight: 300;
-    /* transition: 0.2s ease-out; */
     color: #eee;
+    transition: background-color 0.25s ease-out;
+}
+
+form input::placeholder {
+    color: #ccc;
 }
 
 form input:focus {
@@ -54,7 +68,7 @@ form input:focus {
 }
 
 input[type="text"] {
-    text-align:center;
+    text-align: center;
 }
 
 form button {
@@ -62,39 +76,58 @@ form button {
     border: none;
     outline: none;
     cursor: pointer;
-    width: 20%;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    margin-left: 20px;
+    padding: 0 1.75rem;
+    min-width: 120px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 14px;
     background-image: linear-gradient(to bottom right, #810955, #fbb454);
+    transition: background-image 0.6s ease-out, transform 0.15s ease-out;
 }
 
 form button:hover {
-    transition: 0.8s ease-out;
     background-image: linear-gradient(to bottom right, #fbb454, #810955);
-    color: white;
-    /* font-size: 1.75rem; */
 }
+
+form button:active {
+    transform: scale(0.97);
+}
+
+.error-banner {
+    margin: 0.5rem auto 0;
+    max-width: 80%;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    background-color: rgba(220, 53, 69, 0.85);
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
 .weather-info {
-    /* flex: 1 1 100%; */
+    flex: 1 1 auto;
     padding: 23px 25px 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .location {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .location .city {
     color: #eee;
     font-size: 2.3rem;
     font-weight: 500;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .location .date {
@@ -107,19 +140,27 @@ form button:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+
+.current .icon {
+    width: 180px;
+    height: 180px;
+    margin-top: 1rem;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
 }
 
 .current .temp {
     color: #eee;
     font-size: 4rem;
     font-weight: 900;
-    margin: 30px 0;
+    margin: 10px 0 20px;
     text-shadow: 3px 5px rgba(0, 0, 0, 0.6);
 }
 
 .current .description {
     color: #eee;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     font-style: italic;
     margin-bottom: 1rem;
@@ -132,34 +173,66 @@ form button:hover {
 
 .current .hi-low {
     color: #eee;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 500;
     text-shadow: 0 3px rgba(0, 0, 0, 0.4);
 }
 
 footer {
-    /* background: -webkit-linear-gradient(bottom, #7D1E6A, orange); */
-    width: 100vw;
+    width: 100%;
     bottom: 0;
     position: fixed;
-    background-color: lightgrey;
+    background-color: rgba(220, 220, 220, 0.95);
     height: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background-clip: padding-box;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .footer {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
     background: -webkit-linear-gradient(right, blue, purple, orange, green);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .footer:hover {
-    /* transition: 0.8s ease-in; */
     background: -webkit-linear-gradient(left, blue, purple, orange, green);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 640px) {
+    form input {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    form button {
+        width: 100%;
+    }
+
+    .location .city {
+        font-size: 1.8rem;
+    }
+
+    .current .temp {
+        font-size: 3.25rem;
+    }
+
+    .current .description {
+        font-size: 1.85rem;
+    }
+
+    .current .hi-low {
+        font-size: 1.35rem;
+    }
+
+    .current .icon {
+        width: 140px;
+        height: 140px;
+    }
 }
